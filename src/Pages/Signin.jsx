@@ -27,8 +27,6 @@ const Signin = () => {
       });
       console.log(data);
       
-      
-
     } catch (error) {
       console.error(error);
     }

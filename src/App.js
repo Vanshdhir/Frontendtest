@@ -16,6 +16,7 @@ import Signinsucess from './Pages/Signinsucess';
 import Login1 from './Pages/Login1';
 import Login2 from './Pages/Login2';
 import Login3 from './Pages/Login3';
+import Updateuser from './Pages/Updateuser';
 
 
 function App() {
@@ -39,18 +40,12 @@ function App() {
     <Route path='/login1' element={<Login1/>} />
     <Route path='/login2' element={<Login2/>} />
     <Route path='/login3' element={<Login3/>} />
+    <Route path='/updateuser' element={<Updateuser/>} />
     
-
-
-
-
+    
     </Routes>
-    
-    
+        
     </BrowserRouter>
-
-
-    
 
     </>
   );

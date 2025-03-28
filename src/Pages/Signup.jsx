@@ -21,11 +21,7 @@ const Signup = () => {
       // console.log(data)
 
 
-      const {response} = await axios.post('http://localhost:3000/auth/signup',{uname, email,password},{
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
+      const {response} = await axios.post('http://localhost:3000/auth/signup',{uname, email,password})
       console.log(response);
     } catch (error) {
       console.error(error);
@@ -76,7 +72,7 @@ const Signup = () => {
           <FaAndroid className="w-6 h-6 cursor-pointer" />
         </div>
 
-
+        
         <div onClick={() => { navigate('/signupverify') }} className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:mt-[130px] mt-[155px]'>
           <button onClick={signUp} className="rounded-lg transition transform hover:scale-110">
             <img src="./enterbutton.png" alt="Enter Button" className='cursor-pointer' />
