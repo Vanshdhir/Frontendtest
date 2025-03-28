@@ -2,6 +2,7 @@ import React from 'react'
 import Bgpage from '../Components/Bgpage'
 import { useNavigate } from 'react-router-dom'
 import { FaApple, FaAndroid } from 'react-icons/fa';
+import axios from 'axios'
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -10,15 +11,22 @@ const Signup = () => {
   const [email, setEmail ] = React.useState('');
   const [password, setPassword ] = React.useState('');
 
-  const Signup = async() => {
-
+  const signUp = async() => {
     try {
-      const response = await fetch('http://localhost:3000/auth/signup', {
-        method: 'POST',
-        
-        body: JSON.stringify({uname,email,password})
-      });
-      
+      // const response = await fetch('http://localhost:3000/auth/signup', {
+      //   method: 'POST',
+      //   body: JSON.stringify({uname,email,password})
+      // });
+      // const data = await response.json()
+      // console.log(data)
+
+
+      const {response} = await axios.post('http://localhost:3000/auth/signup',{uname, email,password},{
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      console.log(response);
     } catch (error) {
       console.error(error);
       
@@ -70,7 +78,7 @@ const Signup = () => {
 
 
         <div onClick={() => { navigate('/signupverify') }} className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:mt-[130px] mt-[155px]'>
-          <button onClick={Signup} className="rounded-lg transition transform hover:scale-110">
+          <button onClick={signUp} className="rounded-lg transition transform hover:scale-110">
             <img src="./enterbutton.png" alt="Enter Button" className='cursor-pointer' />
           </button>
         </div>
