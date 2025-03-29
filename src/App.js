@@ -17,6 +17,8 @@ import Login1 from './Pages/Login1';
 import Login2 from './Pages/Login2';
 import Login3 from './Pages/Login3';
 import Updateuser from './Pages/Updateuser';
+import Deleteuser from './Pages/Deleteuser';
+import Displayusers from './Pages/Displayusers';
 
 
 function App() {
@@ -41,6 +43,9 @@ function App() {
     <Route path='/login2' element={<Login2/>} />
     <Route path='/login3' element={<Login3/>} />
     <Route path='/updateuser' element={<Updateuser/>} />
+    <Route path='/deleteuser' element={<Deleteuser/>} />
+    <Route path='/displayusers' element={<Displayusers/>} />
+
     
     
     </Routes>
